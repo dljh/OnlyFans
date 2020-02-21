@@ -6,7 +6,7 @@
 
 Read the [#FAQ](https://github.com/DIGITALCRIMINAL/OnlyFans/blob/master/README.md#faq) at the bottom of this page before submitting a issue.
 
-From the project folder run this command in your terminal:
+From the project folder open CMD/Terminal and run the command below:
 
 `pip install -r requirements.txt`
 
@@ -18,19 +18,22 @@ Open:
 
 Fill in the following:
 
-* `{"app-token":"your_token"}`
 * `{"auth_id":"your_auth_id"}`
 * `{"auth_hash":"your_auth_hash"}`
 * `{"user-agent":"your_user-agent"}`
 
-Sess token is optional but does help with authing into your account.
+Optional change:
 * `{"sess":"your_sess_token"}`
+* `{"app-token":"your_token"}`
 
 
-Go to www.onlyfans.com and login, open the network debugger, then check the image below on how to get app-token, auth_id, auth_hash and user-agent
+Go to www.onlyfans.com and login, open the network debugger, then check the image below on how to get app-token, auth_id, auth_hash, sess and user-agent
 
 ![app-token](examples/1.png)
 
+Your auth config should look similar to this
+
+![app-token](examples/2.png)
 # USAGE
 
 `python StartDatascraper.py`
@@ -42,7 +45,7 @@ Enter in inputs as prompted by console.
 
 Open:
 
-`config.json`
+`config.json` (Open with a texteditor)
 
 [settings]
 
@@ -58,8 +61,6 @@ file_name_format:
     Default = "{file_name}.{ext}"
 
     {username} = The account's username
-
-    {text} = The post's text
 
     {date} = The post's date
 

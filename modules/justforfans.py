@@ -16,7 +16,8 @@ import re
 logger = logging.getLogger(__name__)
 
 # Open config.json and fill in OPTIONAL information
-json_config = json.load(open('config.json'))
+path = os.path.join('settings', 'config.json')
+json_config = json.load(open(path))
 json_global_settings = json_config["settings"]
 multithreading = json_global_settings["multithreading"]
 json_settings = json_config["supported"]["justforfans"]["settings"]
@@ -220,7 +221,8 @@ def scrape_array(link, session, media_type, directory, username):
 
 def media_scraper(session, site_name, only_links, link, location, media_type, directory, post_count, username):
     print("Scraping " + location + ". May take a few minutes.")
-    array = format_directory(j_directory, site_name, username, location, "Posts")
+    array = format_directory(j_directory, site_name,
+                             username, location, "Posts")
     user_directory = array[0]
     metadata_directory = array[1]
     directory = array[2]
